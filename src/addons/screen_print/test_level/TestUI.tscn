@@ -16,7 +16,7 @@ func _process(delta):
 
 
 func _on_HelloWorld_pressed():
-	ScreenPrint.print(\"Hello world!\")
+	ScreenPrint.print($LineEdit.text)
 
 
 func _on_ColorPickerButton_color_changed(color):
@@ -80,16 +80,41 @@ percent_visible = 1.0
 lines_skipped = 0
 max_lines_visible = -1
 
-[node name="HelloWorld" type="Button" parent="." index="1"]
+[node name="LineEdit" type="LineEdit" parent="." index="1"]
 
 anchor_left = 0.0
 anchor_top = 0.0
 anchor_right = 0.0
 anchor_bottom = 0.0
-margin_left = 409.0
-margin_top = 172.0
-margin_right = 580.0
-margin_bottom = 216.0
+margin_left = 377.0
+margin_top = 190.0
+margin_right = 540.0
+margin_bottom = 214.0
+rect_pivot_offset = Vector2( 0, 0 )
+rect_clip_content = false
+focus_mode = 2
+mouse_filter = 0
+mouse_default_cursor_shape = 1
+size_flags_horizontal = 1
+size_flags_vertical = 1
+text = "Hello world!"
+focus_mode = 2
+context_menu_enabled = true
+placeholder_alpha = 0.6
+caret_blink = false
+caret_blink_speed = 0.65
+caret_position = 0
+
+[node name="PrintButton" type="Button" parent="." index="2"]
+
+anchor_left = 0.0
+anchor_top = 0.0
+anchor_right = 0.0
+anchor_bottom = 0.0
+margin_left = 549.0
+margin_top = 193.0
+margin_right = 641.0
+margin_bottom = 213.0
 rect_pivot_offset = Vector2( 0, 0 )
 rect_clip_content = false
 focus_mode = 2
@@ -101,11 +126,11 @@ toggle_mode = false
 enabled_focus_mode = 2
 shortcut = null
 group = null
-text = "Hello World!"
+text = "Print!"
 flat = false
 align = 1
 
-[node name="ColorPickerButton" type="ColorPickerButton" parent="." index="2"]
+[node name="ColorPickerButton" type="ColorPickerButton" parent="." index="3"]
 
 editor/display_folded = true
 anchor_left = 0.0
@@ -153,7 +178,7 @@ percent_visible = 1.0
 lines_skipped = 0
 max_lines_visible = -1
 
-[node name="TimeSpin" type="SpinBox" parent="." index="3"]
+[node name="TimeSpin" type="SpinBox" parent="." index="4"]
 
 anchor_left = 0.0
 anchor_top = 0.0
@@ -201,7 +226,7 @@ percent_visible = 1.0
 lines_skipped = 0
 max_lines_visible = -1
 
-[node name="SpacingSpin" type="SpinBox" parent="." index="4"]
+[node name="SpacingSpin" type="SpinBox" parent="." index="5"]
 
 anchor_left = 0.0
 anchor_top = 0.0
@@ -249,7 +274,7 @@ percent_visible = 1.0
 lines_skipped = 0
 max_lines_visible = -1
 
-[node name="TopPadSpin" type="SpinBox" parent="." index="5"]
+[node name="TopPadSpin" type="SpinBox" parent="." index="6"]
 
 editor/display_folded = true
 anchor_left = 0.0
@@ -298,7 +323,7 @@ percent_visible = 1.0
 lines_skipped = 0
 max_lines_visible = -1
 
-[node name="LeftPadSpin" type="SpinBox" parent="." index="6"]
+[node name="LeftPadSpin" type="SpinBox" parent="." index="7"]
 
 editor/display_folded = true
 anchor_left = 0.0
@@ -347,7 +372,7 @@ percent_visible = 1.0
 lines_skipped = 0
 max_lines_visible = -1
 
-[node name="MaxLinesSpin" type="SpinBox" parent="." index="7"]
+[node name="MaxLinesSpin" type="SpinBox" parent="." index="8"]
 
 editor/display_folded = true
 anchor_left = 0.0
@@ -396,7 +421,7 @@ percent_visible = 1.0
 lines_skipped = 0
 max_lines_visible = -1
 
-[node name="SpamCheckbox" type="CheckBox" parent="." index="8"]
+[node name="SpamCheckbox" type="CheckBox" parent="." index="9"]
 
 anchor_left = 0.0
 anchor_top = 0.0
@@ -417,11 +442,11 @@ toggle_mode = true
 enabled_focus_mode = 2
 shortcut = null
 group = null
-text = "Spam some numbers"
+text = "Print ascending numbers"
 flat = false
 align = 0
 
-[node name="OutputCheckbox" type="CheckBox" parent="." index="9"]
+[node name="OutputCheckbox" type="CheckBox" parent="." index="10"]
 
 anchor_left = 0.0
 anchor_top = 0.0
@@ -446,7 +471,7 @@ text = "Print to Output"
 flat = false
 align = 0
 
-[connection signal="pressed" from="HelloWorld" to="." method="_on_HelloWorld_pressed"]
+[connection signal="pressed" from="PrintButton" to="." method="_on_HelloWorld_pressed"]
 
 [connection signal="color_changed" from="ColorPickerButton" to="." method="_on_ColorPickerButton_color_changed"]
 
